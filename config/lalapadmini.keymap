@@ -15,9 +15,11 @@
 #define SCROLL_L_LAYER  7
 
 // Mouse Scroll Value
+
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 100
 
 // cirque trackpad input&layer control
+
 &glidepoint_listener_R {
     input-processors =
         <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
@@ -138,14 +140,29 @@
             key-positions = <0 1>;
         };
 
-        COMBO_TAB {
-            bindings = <&kp TAB>;
-            key-positions = <10 11>;
-        };
-
         COMBO_WIN {
             bindings = <&kp LWIN>;
             key-positions = <30 31>;
+        };
+
+        m1 {
+            bindings = <&mkp MB1>;
+            key-positions = <16 17>;
+        };
+
+        m2 {
+            bindings = <&mkp MB2>;
+            key-positions = <17 18>;
+        };
+
+        m3 {
+            bindings = <&mkp MB3>;
+            key-positions = <16 17 18>;
+        };
+
+        sys3 {
+            bindings = <&mo 3>;
+            key-positions = <3 4>;
         };
     };
 
@@ -166,10 +183,10 @@
             sensor-bindings = <&scroll_down_up>, <&scroll_up_down>;
 
             bindings = <
-&kp Q             &kp W         &kp E  &kp R      &kp T  &kp Y            &kp U      &kp I      &kp O                    &kp P
-&kp A             &kp S         &kp D  &kp F      &kp G  &kp H            &kp J      &kp K      &kp L                    &mt2 EQUAL MINUS
-&mt LEFT_SHIFT Z  &kp X         &kp C  &kp V      &kp B  &kp N            &kp M      &kp COMMA  &kp PERIOD               &mt RSHIFT SLASH
-&kp LCTRL         &kp LEFT_ALT         &kp SPACE  &mo 1  &lt 2 BACKSPACE  &kp ENTER             &mt CAPSLOCK LANGUAGE_2  &mt RCTRL LANGUAGE_1
+&kp Q             &kp W         &kp E  &kp R        &kp T      &kp Y            &kp U            &kp I      &kp O           &kp P
+&kp A             &kp S         &kp D  &kp F        &kp G      &kp H            &kp J            &kp K      &kp L           &kp MINUS
+&mt LEFT_SHIFT Z  &kp X         &kp C  &kp V        &kp B      &kp N            &kp M            &kp COMMA  &kp PERIOD      &kp SLASH
+&kp LCTRL         &kp LEFT_ALT         &lt 5 SPACE  &lt 1 TAB  &lt 1 BACKSPACE  &mt LSHFT ENTER             &kp LANGUAGE_2  &kp LANGUAGE_1
             >;
         };
 
@@ -178,10 +195,10 @@
             sensor-bindings = <&scroll_left_right>, <&scroll_left_right>;
 
             bindings = <
-&mt2 F1 NUMBER_1  &mt2 F2 NUMBER_2  &mt2 F3 NUMBER_3  &mt2 F4 NUMBER_4  &mt2 F5 N5         &kp KP_COMMA     &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_DIVIDE
-&mt2 F6 NUMBER_6  &mt2 F7 N7        &mt2 F8 N8        &mt2 F9 N9        &mt2 F10 N0        &kp KP_DOT       &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_ASTERISK
-&mt2 F11 GRAVE    &mt2 F12 SQT      &kp SEMICOLON     &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_MINUS
-&trans            &trans                              &trans            &trans             &kp DELETE       &trans                            &none            &kp KP_PLUS
+&kp PIPE         &kp NON_US_BACKSLASH  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp DOUBLE_QUOTES  &kp GRAVE   &kp N7        &kp N8        &kp N9        &kp KP_DIVIDE
+&kp LSHFT        &kp SQT               &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp TILDE          &kp COMMA   &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp KP_ASTERISK
+&kp EXCLAMATION  &kp QUESTION          &kp SEMICOLON         &kp COLON              &kp UNDERSCORE     &kp PERIOD  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp KP_MINUS
+&trans           &trans                                      &trans                 &trans             &kp DELETE  &mt LSHFT N0                &none         &kp KP_PLUS
             >;
         };
 
@@ -222,11 +239,13 @@
         SCROLL_R_LAYER {
             display-name = "scroll_r_layer";
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans          &trans  &trans  &trans  &trans          &trans  &trans
+&kp F12  &kp F7  &kp F8  &kp F9  &kp LA(F4)          &kp LG(LS(S))  &kp HOME               &kp UP_ARROW  &kp END    &trans
+&kp F11  &kp F4  &kp F5  &kp F6  &kp LG(LEFT_ARROW)  &trans         &kp LEFT_ARROW         &kp DOWN      &kp RIGHT  &trans
+&kp F10  &kp F1  &kp F2  &kp F3  &kp LG(RIGHT)       &trans         &trans                 &trans        &trans     &trans
+&trans   &trans          &trans  &trans              &kp DELETE     &mt RIGHT_SHIFT ENTER                &trans     &trans
             >;
+
+            sensor-bindings = <&volume_up_down>;
         };
 
         MOUSE_L_LAYER {
