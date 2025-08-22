@@ -147,22 +147,37 @@
 
         m1 {
             bindings = <&mkp MB1>;
-            key-positions = <7 8>;
+            key-positions = <7 6>;
         };
 
         m2 {
             bindings = <&mkp MB2>;
-            key-positions = <8 9>;
+            key-positions = <8 7>;
         };
 
         m3 {
             bindings = <&mkp MB3>;
-            key-positions = <7 8 9>;
+            key-positions = <7 8 6>;
         };
 
         alt {
             bindings = <&kp LEFT_ALT>;
             key-positions = <21 20>;
+        };
+
+        m1_home {
+            bindings = <&mkp MB1>;
+            key-positions = <16 17>;
+        };
+
+        m2_home {
+            bindings = <&mkp MB2>;
+            key-positions = <17 18>;
+        };
+
+        m3_home {
+            bindings = <&mkp MB3>;
+            key-positions = <16 17 18>;
         };
     };
 
