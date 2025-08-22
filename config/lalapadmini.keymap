@@ -167,17 +167,17 @@
 
         m1_home {
             bindings = <&mkp MB1>;
-            key-positions = <16 17>;
+            key-positions = <17 18>;
         };
 
         m2_home {
             bindings = <&mkp MB2>;
-            key-positions = <17 18>;
+            key-positions = <18 19>;
         };
 
         m3_home {
             bindings = <&mkp MB3>;
-            key-positions = <16 17 18>;
+            key-positions = <17 18 19>;
         };
     };
 
